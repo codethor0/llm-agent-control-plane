@@ -309,3 +309,7 @@ Copy `.env.example` to `.env` (optional). Policy: `policies/default.yaml`.
 ## License
 
 MIT — [LICENSE](LICENSE).
+
+## Support
+
+If this project is useful to you, you can support its continued development through [GitHub Sponsors](https://github.com/sponsors/codethor0).
