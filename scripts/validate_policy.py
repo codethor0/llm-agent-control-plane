@@ -18,7 +18,7 @@ def _repo_src_on_path() -> None:
         sys.path.insert(0, str(src))
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate policy integrity and SHA-256 hash.")
     parser.add_argument(
         "--policy",
@@ -37,7 +37,7 @@ def main() -> int:
         action="store_true",
         help="Write computed hash to --hash-file (use when policy changes intentionally)",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     _repo_src_on_path()
     from agent_control_plane.policy_integrity import (  # noqa: PLC0415

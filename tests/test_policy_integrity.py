@@ -162,4 +162,5 @@ def _load_validate_policy_module() -> ModuleType:
 
 def test_validate_policy_script_passes_on_default_policy() -> None:
     module = _load_validate_policy_module()
-    assert module.main() == 0
+    # Pass an explicit empty argv so pytest's own command-line flags are not parsed.
+    assert module.main([]) == 0
