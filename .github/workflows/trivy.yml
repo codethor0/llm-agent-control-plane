@@ -18,6 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test Trivy policy
+        run: |
+          docker run --rm --network none --read-only \
+            --mount "type=bind,src=$PWD/.github,dst=/policy,readonly" \
+            openpolicyagent/opa:1.22.4@sha256:ff50f50332ff9e722ffafe2658c195ced1f9b6d4f3064000c2ecfa8cdf7acccf \
+            test --v0-compatible --fail-on-empty /policy/trivy-ignore.rego /policy/trivy-ignore_test.rego
+
       - name: Build image for scan
         run: docker build -t llm-agent-control-plane:scan .
 
@@ -30,6 +37,7 @@ jobs:
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           vuln-type: os,library
+          ignore-policy: .github/trivy-ignore.rego
 
       - name: Trivy summary
         if: always()
