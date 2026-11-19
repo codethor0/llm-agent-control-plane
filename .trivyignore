@@ -1,0 +1,7 @@
+# CVE-2025-47273 (setuptools PackageIndex path traversal, fixed in 78.1.1).
+# The image has no setuptools installed. Trivy matches the version string
+# "setuptools==70.3.0" in pip's own pip/_vendor/vendor.txt, but pip vendors
+# only pkg_resources/__init__.py, not setuptools/package_index.py, so the
+# vulnerable code is not present. Verified 2026-11-19 against pip 26.3.
+# Re-review by the expiry date or when pip updates its vendored copy.
+CVE-2025-47273 exp:2027-05-19
