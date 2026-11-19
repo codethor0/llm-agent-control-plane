@@ -30,8 +30,7 @@ COPY docs/kms-secret-management.md docs/siem-onboarding-plan.md docs/rate-limiti
 COPY docs/enterprise-readiness-checklist.md ./docs/
 COPY .github/workflows ./.github/workflows
 
-# setuptools >= 78.1.1 fixes CVE-2025-47273 (path traversal in PackageIndex).
-RUN pip install --upgrade pip "setuptools>=78.1.1" \
+RUN pip install --upgrade pip \
     && pip install -e ".[dev]" \
     && python scripts/check_python_version.py \
     && mkdir -p /app/var/audit \
