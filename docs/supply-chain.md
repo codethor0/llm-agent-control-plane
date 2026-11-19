@@ -24,7 +24,7 @@ No private registry or repository secrets required.
 
 ## GitHub Actions pinning policy
 
-- **First-party actions:** pin to major version tags (`actions/checkout@v4`, `actions/upload-artifact@v4`, `github/codeql-action/*@v3`).
+- **First-party actions:** pin to major version tags (`actions/checkout@v4`, `actions/upload-artifact@v4`, `github/codeql-action/*@v4`).
 - **Third-party actions:** pin to explicit release tags where used:
   - `gitleaks/gitleaks-action@v2` — secret scanning without custom credentials
   - `aquasecurity/trivy-action@v0.36.0` — container CVE scan

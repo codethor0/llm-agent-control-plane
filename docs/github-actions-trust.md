@@ -9,7 +9,7 @@ This document inventories **GitHub Actions** used in **llm-agent-control-plane**
 | Workflow | File | Trigger | Primary actions |
 |----------|------|---------|-----------------|
 | CI | `ci.yml` | push/PR `main` | `actions/checkout@v4`, `actions/setup-python@v5` |
-| CodeQL | `codeql.yml` | push/PR `main`, weekly | `actions/checkout@v4`, `github/codeql-action/*@v3` |
+| CodeQL | `codeql.yml` | push/PR `main`, weekly | `actions/checkout@v4`, `github/codeql-action/*@v4` |
 | Secret scan | `secrets.yml` | push/PR `main` | `actions/checkout@v4`, `gitleaks/gitleaks-action@v2` |
 | Trivy | `trivy.yml` | push/PR `main` | `actions/checkout@v4`, `aquasecurity/trivy-action@v0.36.0` |
 | SBOM | `sbom.yml` | push/PR `main`, manual | `actions/checkout@v4`, `anchore/sbom-action@v0`, `actions/upload-artifact@v4` |
